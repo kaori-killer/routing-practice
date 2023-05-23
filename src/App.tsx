@@ -4,15 +4,21 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 
+const pages: Record<string, React.FC> = {
+	'/': HomePage,
+	'/about': AboutPage,
+};
+
 export default function App() {
 	const path = window.location.pathname;
+
+	const Page = pages[path] || HomePage;
 
 	return (
 		<div>
 			<Header />
 			<main>
-				{path === '/' && <HomePage />}
-				{path === '/about' && <AboutPage />}
+				<Page />
 			</main>
 			<Footer />
 		</div>
