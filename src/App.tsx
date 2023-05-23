@@ -12,7 +12,7 @@ const pages: Record<string, React.FC> = {
 export default function App() {
 	const path = window.location.pathname;
 
-	const Page = pages[path] || HomePage;
+	const Page = Reflect.get(pages, path) || HomePage;
 
 	return (
 		<div>
