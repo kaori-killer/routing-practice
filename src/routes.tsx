@@ -4,6 +4,7 @@ import Layout from './components/Layout';
 
 import AboutPage from './pages/AboutPage';
 import HomePage from './pages/HomePage';
+import LogoutPage from './pages/LogoutPage';
 
 // 계층형으로 작성한다.
 const routes = [
@@ -15,6 +16,7 @@ const routes = [
 		children: [
 			{path: '/', element: <HomePage />},
 			{path: '/about', element: <AboutPage />},
+			{path: '/logout', element: <LogoutPage />},
 		],
 	},
 ];

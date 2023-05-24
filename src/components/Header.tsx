@@ -1,5 +1,5 @@
 import {type SyntheticEvent} from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export default function Header() {
 	return (
@@ -7,10 +7,13 @@ export default function Header() {
 			<nav>
 				<ul>
 					<li>
-						<NavLink to='/'>Home</NavLink>
+						<Link to='/'>Home</Link>
 					</li>
 					<li>
-						<NavLink to='/about'>About</NavLink>
+						<Link to='/about'>About</Link>
+					</li>
+					<li>
+						<Link to='logout'>Logout</Link>
 					</li>
 				</ul>
 			</nav>
