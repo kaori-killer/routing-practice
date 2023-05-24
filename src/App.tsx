@@ -6,11 +6,6 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 
-const pages: Record<string, React.FC> = {
-	'/': HomePage,
-	'/about': AboutPage,
-};
-
 export default function App() {
 	return (
 		<div>
