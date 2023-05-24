@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './App';
-import {BrowserRouter} from 'react-router-dom';
 
 function main() {
 	const container = document.getElementById('root');
