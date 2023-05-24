@@ -34,4 +34,11 @@ describe('App', () => {
 			screen.getByText(/This is test/);
 		});
 	});
+
+	context('when the current path is "/logout"', () => {
+		it('redirects to the home page', () => {
+			renderRouter('/logout');
+			screen.getByText(/Welcome/);
+		});
+	});
 });
