@@ -1,7 +1,12 @@
-import {type SyntheticEvent} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 export default function Header() {
+	const naviage = useNavigate();
+
+	const handleClickLogout = () => {
+		naviage('/');
+	};
+
 	return (
 		<header>
 			<nav>
@@ -13,7 +18,7 @@ export default function Header() {
 						<Link to='/about'>About</Link>
 					</li>
 					<li>
-						<Link to='logout'>Logout</Link>
+						<button type='button' onClick={handleClickLogout}>Log out</button>
 					</li>
 				</ul>
 			</nav>
