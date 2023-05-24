@@ -1,3 +1,5 @@
+import {Routes, Route} from 'react-router-dom';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -10,15 +12,14 @@ const pages: Record<string, React.FC> = {
 };
 
 export default function App() {
-	const path = window.location.pathname;
-
-	const Page = Reflect.get(pages, path) || HomePage;
-
 	return (
 		<div>
 			<Header />
 			<main>
-				<Page />
+				<Routes>
+					<Route path='/' element={<HomePage />} />
+					<Route path='/about' element={<AboutPage />} />
+				</Routes>
 			</main>
 			<Footer />
 		</div>

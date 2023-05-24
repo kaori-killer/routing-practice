@@ -1,11 +1,32 @@
-import {render} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 
 import App from './App';
+import {MemoryRouter} from 'react-router-dom';
 
-test('App', () => {
-	render(<App />);
+const context = describe;
+
+describe('App', () => {
+	context('when the current path is "/"', () => {
+		it('renders the home page', () => {
+			render((
+				<MemoryRouter initialEntries={['/']}>
+					<App />
+				</MemoryRouter>
+			));
+
+			screen.getByText(/Welcome/);
+		});
+	});
+
+	context('when the current path is "/about"', () => {
+		it('renders the about page', () => {
+			render((
+				<MemoryRouter initialEntries={['/about']}>
+					<App />
+				</MemoryRouter>
+			));
+
+			screen.getByText(/This is test/);
+		});
+	});
 });
-
-// 테스트는 윈도우가 임의로는 있을 수 있는데 진짜로 있진 않음
-// const path = window.location.pathname;를 추상화 할 바엔
-// React Router 라는 도구를 사용하자.
